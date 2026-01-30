@@ -1,0 +1,56 @@
+﻿@model WebApplication18.Models.Userinfo
+
+@{
+    ViewData["Title"] = "Edit User";
+}
+
+<h2>Details User</h2>
+<a action="Deatais">Details</a>
+<table>
+    <tr>
+        <th>Username</th>
+        <td>@Model.Username</td>
+    </tr>
+
+
+    <tr>
+        <th>Password</th>
+        <td>@Model.Password</td>
+    </tr>
+
+    <tr>
+        <th>Email</th>
+        <td>@Model.Email</td>
+    </tr>
+
+    <tr>
+        <th>Phone</th>
+        <td>@Model.Phone</td>
+    </tr>
+
+    <tr>
+        <th>Date</th>
+        <td>@Model.Date</td>
+    </tr>
+
+    
+
+</table>
+
+
+<button type="submit" class="btn btn-success">
+        Deatils
+    </button>
+
+    <a asp-action="Index" class="btn btn-secondary">
+        Back
+    </a>
+
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+

@@ -1,0 +1,61 @@
+﻿@model IEnumerable<WebApplication18.Models.Userinfo>
+<h2>User Details</h2>
+
+<form >
+
+    <a asp-action="Create" class="btn btn-primary">Add Student</a>
+
+    <table class="table table-bordered mt-3">
+
+        <tr  class="tab-content mt-1">
+            <th>Username</th>
+            <th>Password</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Date</th>
+            <th>Action</th>
+        </tr>
+        @foreach (var s in Model)
+        {
+            <tr>
+
+                <td>@s.Username</td>
+                <td>@s.Password</td>
+                <td>@s.Email</td>
+                <td>@s.Phone</td>
+                <td>@s.Date</td>
+                <td>
+
+                    <a asp-action="Edit" asp-route-id="@s.UserId"
+                       class="btn btn-warning btn-sm">Edit</a>
+
+                    <a asp-action="Delete" asp-route-id="@s.UserId"
+                       class="btn btn-danger btn-sm">Delete</a>
+
+
+                    <a asp-action="Deatils" asp-route-id="@s.UserId"
+                       class="btn btn-secondary btn-sm">Deatils</a>
+                </td>
+
+
+
+
+            </tr>
+
+
+        }
+    </table>
+
+
+</form>
+
+
+
+
+
+
+
+
+
+
+
